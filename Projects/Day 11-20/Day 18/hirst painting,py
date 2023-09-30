@@ -1,0 +1,34 @@
+import turtle as turtle_module
+import random
+turtle_module.colormode(255)
+tom = turtle_module.Turtle()
+tom.speed(0)
+tom.penup()
+tom.hideturtle()
+tom.setheading(225)
+tom.forward(300)
+tom.setheading(0)
+no_of_dots = 100
+
+def random_color():
+    r = random.randint(0,255)
+    g = random.randint(0,255)
+    b = random.randint(0,255)
+    color = (r, g, b)
+    return color
+
+
+for dot in range(1, no_of_dots+1):
+    tom.dot(20, random_color())
+    tom.forward(50)
+    if dot % 10 == 0:
+        tom.setheading(90)
+        tom.forward(50)
+        tom.setheading(180)
+        tom.forward(500)
+        tom.setheading(0)
+
+
+
+screen = turtle_module.Screen()
+screen.exitonclick()
